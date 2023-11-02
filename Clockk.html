@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-image: url("https://previews.123rf.com/images/metrs/metrs1705/metrs170500022/78009884-man-in-a-hat-with-a-gun-retro-style-pop-art-vector-illustration.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 600px;
+        width: 900px;
+        padding: 0px;
+        margin left: 150px;
+        
+      }
+      h1{
+            height: 140px;
+            width: 150px;
+            background-color: white;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            border-radius: 90px;
+            margin: 10% 40%;
+            background-image: url("https://media.tenor.com/BF_277dJqJYAAAAC/satisfying-abstract.gif");
+            background-size: cover;
+        }
+        span{
+            position: relative;
+        }
+        span::after{
+            content:"hour";
+            position: absolute;
+            font-size: 10px;
+            top: 10px;
+            left: -5px;
+            color: whitesmoke;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+    <h1 class="clock">
+      <span id="hr"></span>:<span id="mn"></span>:<span id="sec"></span>
+    </h1></div>
+    <script>
+      let hour = document.getElementById("hr");
+      let min = document.getElementById("mn");
+      let sec = document.getElementById("sec");
+
+      function udpateTime() {
+        let tm = new Date();
+
+        let hr = tm.getHours();
+        let mn = tm.getMinutes();
+        let sc = tm.getSeconds();
+        hour.innerHTML = hr - 12;
+        min.innerHTML = mn;
+        sec.innerHTML = sc;
+      }
+
+      setInterval(udpateTime, 1000);
+    </script>
+  </body>
+</html>
